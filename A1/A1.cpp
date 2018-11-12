@@ -3,7 +3,7 @@
 
 int main()
 {
-    int size = 1, numbers = 0, subscript = 0;
+    int size = 1, numbers = 0, subscript = 0, total = 0, avarage = 0;
     int *fileData = new int[size];
     int *tempData = new int[size];
 
@@ -39,7 +39,15 @@ int main()
     }
     for (int i = 0; i < subscript; i++)
     {
-        std::cout << fileData[i] << " ";
+        total += fileData[i];
+    }
+    avarage = total / subscript;
+    for (int i = 0; i < subscript; i++)
+    {
+        if (fileData[i] > avarage)
+        {
+            std::cout << fileData[i] << " ";
+        }
     }
 
     std::system("pause");
