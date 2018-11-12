@@ -45,5 +45,6 @@ int main()
     std::system("pause");
 
     inputStream.close();
+    tempData = fileData = NULL;
     delete[] fileData, tempData;
 }
