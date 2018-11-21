@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <cmath>
 
 int main(int argc, const char *argv[])
 {
-    std::cout << argv[1] << std::endl;
+    std::cout << argv[1] << " opened." << std::endl;
     int size = 1, numbers = 0, subscript = 0, total = 0, avarage = 0;
     int *fileData = new int[size];
     int *tempData = new int[size];
@@ -47,7 +48,7 @@ int main(int argc, const char *argv[])
     {
         if (fileData[i] > avarage)
         {
-            std::cout << fileData[i] << " ";
+            std::cout << std::round(fileData[i]) << " ";
         }
     }
     std::cin.get();
