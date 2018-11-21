@@ -4,10 +4,11 @@
 
 int main(int argc, const char *argv[])
 {
-    std::cout << argv[1] << " opened. " << std::endl;
-    int size = 1, numbers = 0, subscript = 0, total = 0, avarage = 0;
-    int *fileData = new int[size];
-    int *tempData = new int[size];
+    std::cout << argv[1] << " opened.  " << std::endl;
+    int size = 1, subscript = 0;
+    double total = 0, avarage = 0, numbers = 0;
+    double *fileData = new double[size];
+    double *tempData = new double[size];
 
     std::ifstream inputStream;
     inputStream.open(argv[1]);
@@ -24,7 +25,7 @@ int main(int argc, const char *argv[])
 
             delete[] fileData;
             fileData = nullptr;
-            fileData = new int[size];
+            fileData = new double[size];
 
             for (int i = 0; i < subscript; i++)
             {
@@ -33,7 +34,7 @@ int main(int argc, const char *argv[])
 
             delete[] tempData;
             tempData = nullptr;
-            tempData = new int[size];
+            tempData = new double[size];
         }
         fileData[subscript] = numbers;
         subscript++;
@@ -44,11 +45,12 @@ int main(int argc, const char *argv[])
         total += fileData[i];
     }
     avarage = total / subscript;
+    std::cout << "\nThe avarage is: " << round(avarage) << "\nValues above avarage are: ";
     for (int i = 0; i < subscript; i++)
     {
         if (fileData[i] > avarage)
         {
-            std::cout << std::round(fileData[i]) << " ";
+            std::cout << round(fileData[i]) << " ";
         }
     }
     std::cin.get();
