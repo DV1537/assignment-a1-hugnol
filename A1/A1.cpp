@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cmath>
 
-int main(int argc, const char *argv[])
+int main(int argc, const char *argv[]) 
 {
     std::cout << argv[1] << " opened.  " << std::endl;
     int size = 1, subscript = 0;
@@ -44,7 +44,7 @@ int main(int argc, const char *argv[])
     {
         total += fileData[i];
     }
-    avarage = total / subscript;
+    avarage = total / static_cast<double>(subscript);
     std::cout << "\nThe avarage is: " << round(avarage) << "\nValues above avarage are: ";
     for (int i = 0; i < subscript; i++)
     {
